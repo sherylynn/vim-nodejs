@@ -1,4 +1,4 @@
-func! g:jseval(script)
+func! g:Nodejs(script)
 "  let node_command='node --eval '
   let node_command='node --print '
   return system(l:node_command . '"' . a:script . '"')
