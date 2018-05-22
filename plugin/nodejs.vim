@@ -1,7 +1,9 @@
 func! g:Nodejs(script)
 "  let node_command='node --eval '
-  let node_command='node --print '
-  return system(l:node_command . '"' . a:script . '"')
+  let l:node_command='node --print '
+  let l:result=system(l:node_command . '"' . a:script . '"')
+  "去掉末尾出现的^@符号
+  return matchstr(l:result,'\v.*($)@!')
 endfunc
   
 augroup NodeJS
